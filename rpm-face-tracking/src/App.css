@@ -1,0 +1,22 @@
+body,
+html {
+  background-color: black;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: aquamarine;
+}
+
+input {
+  width: 480px;
+}
+
+video {
+  width: 480px;
+}
