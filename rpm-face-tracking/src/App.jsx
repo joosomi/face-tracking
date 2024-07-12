@@ -19,9 +19,11 @@ let faceLandmarks = [];
 let transformationMatrix = null;
 
 function App() {
-  const [url, setUrl] = useState(
-    "https://assets.codepen.io/9177687/raccoon_head.glb"
-  );
+  // const [url, setUrl] = useState(
+  //   "https://assets.codepen.io/9177687/raccoon_head.glb"
+  // );
+
+  const [url, setUrl] = useState("/raccoon_head.glb");
 
   const handleOnChange = (e) => {
     setUrl(e.target.value);
@@ -194,7 +196,11 @@ function Avatar({ url }) {
     }
   });
 
-  return <primitive object={scene} />;
+  return (
+    <>
+      <primitive object={scene} />;
+    </>
+  );
 }
 
 export default App;
