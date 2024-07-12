@@ -84,10 +84,17 @@ const App = () => {
                   landmark.z * 2 - 1
                 );
               });
+
+              const boundingBox = new THREE.Box3().setFromObject(
+                avatar.gltf.scene
+              );
+              const size = new THREE.Vector3();
+              boundingBox.getSize(size);
+
               avatar.gltf.scene.position.set(
-                positions[0].x,
-                positions[0].y,
-                positions[0].z
+                positions[0].x * size.x,
+                positions[0].y * size.y,
+                positions[0].z * size.z
               );
             }
           }
@@ -167,6 +174,8 @@ const App = () => {
           transform: "scaleX(-1)",
           zIndex: 9999999,
         }}
+        autoPlay
+        playsInline
       ></video>
     </div>
   );
